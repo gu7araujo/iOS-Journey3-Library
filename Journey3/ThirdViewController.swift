@@ -10,6 +10,10 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     
+    deinit {
+        print("\(Swift.type(of: self)) deinit")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue

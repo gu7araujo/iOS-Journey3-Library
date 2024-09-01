@@ -14,7 +14,6 @@ public class Journey3Coordinator: CoordinatorProtocol {
     public weak var finishDelegate: (any CoordinatorFinishDelegate)?
     public var navigationController: UINavigationController
     public var childCoordinators: [any CoordinatorProtocol] = []
-    public var childControllers: [UIViewController] = []
     public var parentCoordinator: (any CoordinatorProtocol)?
     public var type: CoordinatorType = .journey3
     
@@ -23,12 +22,11 @@ public class Journey3Coordinator: CoordinatorProtocol {
     }
     
     deinit {
-        print("\(Journey3Coordinator.self) deinit")
+        print("\(Swift.type(of: self)) deinit")
     }
     
     public func start() {
         let viewController = ThirdViewController()
         navigationController.pushViewController(viewController, animated: true)
-        childControllers.append(viewController)
     }
 }
